@@ -10,8 +10,8 @@ public class Conexion {
     public Conexion() {
     }
     public Connection getConexion() throws SQLException,Exception{
-    	//String url="jdbc:oracle:thin:VS2DAWBIBLIOTECA30/VS2DAWBIBLIOTECA30@10.0.1.12:1521:oradai";
-    	String url="jdbc:oracle:thin:VS2DAWBIBLIOTECA30/VS2DAWBIBLIOTECA30@80.28.158.14:1521:oradai";
+    	//String url="jdbc:oracle:thin:VS2DAW12/VS2DAW12@10.0.1.12:1521:oradai";
+    	String url="jdbc:oracle:thin:VS2DAW12/VS2DAW12@80.28.158.14:1521:oradai";
         Connection con;
         OracleDataSource ods;
         try{

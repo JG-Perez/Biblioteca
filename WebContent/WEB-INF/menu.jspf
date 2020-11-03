@@ -1,0 +1,90 @@
+<!-- ${pageContext.request.contextPath} solución para cargar igual en todas las paginas -->
+<img src="${pageContext.request.contextPath}/resources/img/logo.jpg" class="img-fluid mx-auto" alt="Responsive image">
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown ml-3">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Socios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <c:if test="<%=request.isUserInRole("administrativos")%>">
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/altasocio.jsp">Nuevo Socio</a>
+              </c:if>
+              <c:if test="<%=request.isUserInRole("administrativos")%>">
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/controllerAdmin?operacion=listarSocios">Listado Socios</a>
+              </c:if>
+              <c:if test="<%=request.isUserInRole("administrativos")%>">
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/admin/getSocio.jsp">Modificar Socio</a>
+              </c:if>
+              <c:if test="<%=request.isUserInRole("administrativos")%>">
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/controllerSocio?operacion=editardatospersonales">Modificar Datos Personales</a>
+              </c:if>
+              <c:if test="<%=request.isUserInRole("administrativos")%>">
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/controllerAdmin?operacion=sociosLibrosFueraPlazo">Socios Morosos</a>
+              </c:if>
+              <c:if test="<%=request.isUserInRole("administrativos")%>">
+                <a class="dropdown-item" href="#">Eliminar Socio</a>
+              </c:if>
+            </div>
+        </li>
+        <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Autores
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/controllerAdmin?operacion=altaAutor">Nuevo Autor</a>
+            </c:if>
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/controllerSocio?operacion=listarAutores">Listado Autores</a>
+            </c:if>
+          </div>
+        </li>
+        <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ejemplares
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/admin/borrarEjemplar.jsp">Eliminar Ejemplar</a>
+            </c:if>
+          </div>
+        </li>
+        <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Libros
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/socios/getLibros.jsp">Consulta</a>
+            </c:if>
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/controllerAdmin?operacion=inicioaltalibro">Nuevo Libro</a>
+            </c:if>
+          </div>
+        </li>
+        <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Prestamos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/admin/prestamo.jsp">Nuevo Prestamo</a>
+            </c:if>
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/admin/devolucion.jsp">Devolucion</a>
+            </c:if>
+            <c:if test="<%=request.isUserInRole("administrativos")%>">
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/controller?operacion=logout">Logout</a>
+            </c:if>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
